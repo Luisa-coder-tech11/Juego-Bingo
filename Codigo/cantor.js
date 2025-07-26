@@ -1,7 +1,9 @@
 function cantor() {
+
     this.balotasSacadas = new Array(75).fill(false);
     this.ultimaBalota = 0;
     this.pendientes = 75;
+
     this.tabla = [];
     for (var f = 0; f < 15; f++) {
         this.tabla[f] = [];
@@ -15,6 +17,7 @@ function cantor() {
         this.balotasSacadas = new Array(75).fill(false);
         this.pendientes = 75;
     }
+
     //metodo para sacar balotas 
     this.sacarBalota = function () {
         let totalSacadas = this.balotasSacadas.filter(valor => valor == true).length;
@@ -25,7 +28,7 @@ function cantor() {
             }
             this.balotasSacadas[balota - 1] = true;
             this.ultimaBalota = balota;
-            this.pendientes = 75-totalSacadas-1;
+            this.pendientes = 75 - totalSacadas - 1;
             
             }
             else{
