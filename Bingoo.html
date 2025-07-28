@@ -11,11 +11,10 @@
 </head>
 
 <body ng-controller="ControladorJuegoBingo">
-    <button class="boton" ng-click="iniciarJuego()">
+    <button class="boton" ng-click="iniciarJuego()" ng-disabled="juegoIniciado">
         Iniciar Juego
     </button>
-
-    <button class="boton" ng-click="sacarBalota()">
+    <button class="boton"ng-click="sacarBalota()" ng-disabled="!juegoIniciado">
         Sacar Balota
     </button>
 
@@ -25,6 +24,10 @@
         </span>
         Pendientes <span class="numeroBalota">
             {{ cantor.pendientes||"Ninguno" }}
+        </span>
+        <span ng-if="posicionGanador!=-1">
+            El ganador es {{jugadores[posicionGanador].nombre}}
+
         </span>
     </div>
     <div class="Panel principal">
@@ -51,7 +54,9 @@
         </div>
         <div class="tablas">
             <div class="jugador" ng-repeat="jugador in jugadores">
-                <h3>{{Jugador.nombre}}</h3>
+                <h3>{{Jugador.nombre}}
+                    <span ng-if="jugador.ganador">¡BINGO!</span>
+                </h3>
                 <table>
                     <thead>
                         <tr>
@@ -64,7 +69,7 @@
                     </thead>
                     <tbody>
                         <tr ng-repeat="fila in jugador.tablaJugador.tabla track by $index">
-                            <td ng-repeat="numero in fila track by $index" ng-class="{sacada:jugador.tablaJugador.tapada[$parent.$index][$index]}">
+                            <td ng-repeat="numero in fila track by $index" ng-class="{sacada:jugador.tablaJugador.tapadas[$parent.$index][$index]}">
                                 {{ numero }}
                             </td>
                         </tr>

@@ -20,7 +20,7 @@ body {
 }
 
 .boton:disabled {
-  background-color: #fff;
+  background-color: #52ca1f;
   cursor: not-allowed;
 }
 
@@ -62,12 +62,12 @@ body {
 }
 
 .tablaCantor td.sacada {
-  background-color: #4CAF50;
+  background-color: #28a745;
   color: #fff;
 }
 
 .tablaCantor td:not(.sacada) {
-  background-color: #8c938c;
+  background-color: #cccccc;
   color: #130909;
 }
 
@@ -112,10 +112,27 @@ body {
   max-width: 300px;
   /* Limita el ancho de cada tarjeta individual */
 }
+
+.jugador table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+
+.jugador th, .jugador td {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+
 .jugador th {
-  background-color: #b6046f;
+  background-color: #d34d0a;
   color: white;
 }
+
 .jugador h3{
   margin-top: 0;
     color: #007bff;
@@ -130,11 +147,11 @@ body {
 }
 
 
-.jugador td.sacada {
-  background-color: #4CAF50;
-  color: #fff;
+.jugador td.tapada {
+  background-color:  #2822d6;
+  color: #ffffff;
 }
-.jugador td:not(.sacada) {
+.jugador td:not(.tapada) {
   background-color: #ccc;
   color: black;
 }

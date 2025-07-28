@@ -16,6 +16,7 @@ function cantor() {
     this.iniciar = function () {
         this.balotasSacadas = new Array(75).fill(false);
         this.pendientes = 75;
+        this.ultimaBalota=0
     }
 
     //metodo para sacar balotas 
@@ -29,7 +30,7 @@ function cantor() {
             this.balotasSacadas[balota - 1] = true;
             this.ultimaBalota = balota;
             this.pendientes = 75 - totalSacadas - 1;
-            
+
             }
             else{
                 window.alert("Ya se acabaron las balotas");
